@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HexFud // root@sec-portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/effects.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/cards.css">
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="scanlines"></div>
+<div class="noise"></div>
+<canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
+<div class="boot-screen" id="bootScreen">
+  <pre class="boot-text" id="bootText"></pre>
+</div>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="prompt-tag">root@sec-portfolio</span><span class="cursor-static">:~$</span>
+  </div>
+  <nav class="topbar-nav">
+    <a href="#about" class="nav-link" data-cmd="whoami">whoami</a>
+    <a href="#skills" class="nav-link" data-cmd="scan">scan --skills</a>
+    <a href="#writeups" class="nav-link" data-cmd="writeups">cat writeups/*</a>
+    <a href="#ctf" class="nav-link" data-cmd="ctf">history --ctf</a>
+    <a href="#contact" class="nav-link" data-cmd="contact">netcat contact</a>
+  </nav>
+  <div class="topbar-right">
+    <span class="status-dot"></span>
+    <span class="status-text">SESSION ACTIVE</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="bracket">[</span>ACCESS LEVEL: PUBLIC<span class="bracket">]</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="glitch-wrap" data-text="EXPLOIT.">EXPLOIT.</span>
+          <span class="glitch-wrap red" data-text="ANALYZE.">ANALYZE.</span>
+          <span class="glitch-wrap" data-text="DEFEND.">DEFEND.</span>
+        </h1>
+        <p class="hero-sub">
+          CTF competitor and Hack The Box regular, training through Olicyber and CyberChallenge.IT
+          with one goal in sight: a spot on TeamItaly. This is my competition log, not a client report.
+        </p>
+        <div class="hero-actions">
+          <a href="#writeups" class="btn btn-primary">./view_writeups.sh</a>
+          <a href="#contact" class="btn btn-outline">--connect</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="terminal-window" id="heroTerminal">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-blue"></span>
+            </div>
+            <span class="terminal-title">exploit_chain.sh — 80x24</span>
+            <span class="terminal-hint">click to type</span>
+          </div>
+          <div class="terminal-body" id="terminalBody"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>SQLI</span><span class="sep">//</span>
+        <span>XSS</span><span class="sep">//</span>
+        <span>SSRF</span><span class="sep">//</span>
+        <span>PRIVESC</span><span class="sep">//</span>
+        <span>RCE</span><span class="sep">//</span>
+        <span>BUFFER OVERFLOW</span><span class="sep">//</span>
+        <span>KERNEL EXPLOITATION</span><span class="sep">//</span>
+        <span>CRYPTO</span><span class="sep">//</span>
+        <span>REVERSING</span><span class="sep">//</span>
+        <span>SQLI</span><span class="sep">//</span>
+        <span>XSS</span><span class="sep">//</span>
+        <span>SSRF</span><span class="sep">//</span>
+        <span>PRIVESC</span><span class="sep">//</span>
+        <span>RCE</span><span class="sep">//</span>
+        <span>BUFFER OVERFLOW</span><span class="sep">//</span>
+        <span>KERNEL EXPLOITATION</span><span class="sep">//</span>
+        <span>CRYPTO</span><span class="sep">//</span>
+        <span>REVERSING</span><span class="sep">//</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-head">
+      <span class="section-cmd">$ whoami</span>
+      <h2 class="section-title">Operator Profile</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm building my way into offensive security through Italian CTF programs — Olicyber and
+          CyberChallenge.IT — and by grinding boxes on Hack The Box. Web and crypto challenges are
+          where I spend most of my time, with binary exploitation as the thing I'm actively leveling up.
+        </p>
+        <p>
+          No real-world vulnerabilities disclosed yet — everything here comes from CTF competitions
+          and lab environments. Every event gets logged, win or lose. Next milestone: qualifying for
+          TeamItaly.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-num" data-count="6">00</span>
+          <span class="stat-label">CTF Events — 2026</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value-text">Olicyber<br>CyberChallenge.IT</span>
+          <span class="stat-label">Training Programs</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value-text">Hack The Box</span>
+          <span class="stat-label">Active Platform</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value-text">TeamItaly 2027</span>
+          <span class="stat-label">Next Target</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="skills">
+    <div class="section-head">
+      <span class="section-cmd">$ scan --skills --verbose</span>
+      <h2 class="section-title">Capability Matrix</h2>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-block">
+        <div class="skill-block-head">
+          <span class="skill-tag blue">OFFENSIVE</span>
+          <h3>Web Exploitation</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span class="bar"><i style="--w:95%"></i></span>SQL / NoSQL Injection</li>
+          <li><span class="bar"><i style="--w:90%"></i></span>Auth & Session Attacks</li>
+          <li><span class="bar"><i style="--w:88%"></i></span>SSRF / SSTI Chains</li>
+          <li><span class="bar"><i style="--w:85%"></i></span>Deserialization Bugs</li>
+        </ul>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-head">
+          <span class="skill-tag red">BINARY</span>
+          <h3>Reverse Engineering</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span class="bar"><i style="--w:92%"></i></span>x86 / ARM Disassembly</li>
+          <li><span class="bar"><i style="--w:80%"></i></span>Heap & Stack Exploitation</li>
+          <li><span class="bar"><i style="--w:78%"></i></span>ROP Chain Construction</li>
+          <li><span class="bar"><i style="--w:83%"></i></span>Firmware Analysis</li>
+        </ul>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-head">
+          <span class="skill-tag blue">INFRA</span>
+          <h3>Network & Systems</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span class="bar"><i style="--w:90%"></i></span>Active Directory Attacks</li>
+          <li><span class="bar"><i style="--w:87%"></i></span>Cloud Misconfig (AWS/GCP)</li>
+          <li><span class="bar"><i style="--w:75%"></i></span>C2 Infrastructure</li>
+          <li><span class="bar"><i style="--w:82%"></i></span>Lateral Movement</li>
+        </ul>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-head">
+          <span class="skill-tag red">DEFENSE</span>
+          <h3>Blue Team Tooling</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span class="bar"><i style="--w:80%"></i></span>SIEM Rule Authoring</li>
+          <li><span class="bar"><i style="--w:76%"></i></span>Threat Hunting</li>
+          <li><span class="bar"><i style="--w:70%"></i></span>Malware Triage</li>
+          <li><span class="bar"><i style="--w:85%"></i></span>Hardening Playbooks</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="writeups">
+    <div class="section-head">
+      <span class="section-cmd">$ ls -la ./ctf_notes</span>
+      <h2 class="section-title">Challenge Notes</h2>
+    </div>
+    <div class="writeups-grid">
+
+      <article class="writeup-card">
+        <div class="writeup-top">
+          <span class="sev sev-critical">HARD</span>
+          <span class="writeup-id">PascalCTF 2026</span>
+        </div>
+        <h3>Crypto Chain — Lattice Reduction Puzzle</h3>
+        <p>Broke a custom RSA variant by recovering related primes through a lattice-based attack,
+          after ruling out the more obvious Wiener's attack path.</p>
+        <div class="writeup-tags">
+          <span>#crypto</span><span>#rsa</span><span>#lattice</span>
+        </div>
+        <a href="#" class="writeup-link">read_notes.md &rarr;</a>
+      </article>
+
+      <article class="writeup-card">
+        <div class="writeup-top">
+          <span class="sev sev-medium">MEDIUM</span>
+          <span class="writeup-id">boroCTF 2026</span>
+        </div>
+        <h3>Web — Template Injection to Flag Read</h3>
+        <p>Traced an unsanitized user field into a server-side template render, then escalated the
+          SSTI into arbitrary file read to grab the flag.</p>
+        <div class="writeup-tags">
+          <span>#web</span><span>#ssti</span>
+        </div>
+        <a href="#" class="writeup-link">read_notes.md &rarr;</a>
+      </article>
+
+      <article class="writeup-card">
+        <div class="writeup-top">
+          <span class="sev sev-high">MEDIUM</span>
+          <span class="writeup-id">CTF@CIT 2026</span>
+        </div>
+        <h3>Pwn — Format String to GOT Overwrite</h3>
+        <p>Used an uncontrolled format string to leak a libc address, then overwrote a GOT entry to
+          redirect execution into a stack-planted shellcode.</p>
+        <div class="writeup-tags">
+          <span>#pwn</span><span>#formatstring</span>
+        </div>
+        <a href="#" class="writeup-link">read_notes.md &rarr;</a>
+      </article>
+
+      <article class="writeup-card">
+        <div class="writeup-top">
+          <span class="sev sev-medium">EASY</span>
+          <span class="writeup-id">Codegate CTF 2026 Prelim</span>
+        </div>
+        <h3>Misc — Weak Session Token Prediction</h3>
+        <p>Recovered the PRNG seed behind a session token generator from timing metadata, then predicted
+          the admin session well within the challenge window.</p>
+        <div class="writeup-tags">
+          <span>#misc</span><span>#prng</span>
+        </div>
+        <a href="#" class="writeup-link">read_notes.md &rarr;</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section section-alt" id="ctf">
+    <div class="section-head">
+      <span class="section-cmd">$ history --ctf --user=HexFud</span>
+      <h2 class="section-title">Competition Log</h2>
+    </div>
+    <div class="log-table">
+      <div class="log-row log-row-head">
+        <span>EVENT</span><span>SCORE</span><span>RATING WEIGHT</span>
+      </div>
+      <div class="log-row">
+        <span>CTF@CIT 2026</span><span class="result result-top">10,534.00</span><span>5.514</span>
+      </div>
+      <div class="log-row">
+        <span>PascalCTF 2026</span><span class="result result-top">1,950.00</span><span>6.384</span>
+      </div>
+      <div class="log-row">
+        <span>boroCTF 2026</span><span class="result">3,000.00</span><span>4.100</span>
+      </div>
+      <div class="log-row">
+        <span>Codegate CTF 2026 Preliminary</span><span class="result">250.00</span><span>3.011</span>
+      </div>
+      <div class="log-row">
+        <span>V1T CTF 2026</span><span class="result">31.00</span><span>0.084</span>
+      </div>
+      <div class="log-row">
+        <span>TRX CTF 2026</span><span class="result">2.00</span><span>0.073</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-head">
+      <span class="section-cmd">$ nc -v contact.me 443</span>
+      <h2 class="section-title">Open a Connection</h2>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-terminal">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-blue"></span>
+          </div>
+          <span class="terminal-title">connection_request.sh</span>
+        </div>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label class="field">
+            <span class="field-label">--name</span>
+            <input type="text" name="name" placeholder="jane_doe" required>
+          </label>
+          <label class="field">
+            <span class="field-label">--email</span>
+            <input type="email" name="email" placeholder="jane@domain.com" required>
+          </label>
+          <label class="field">
+            <span class="field-label">--message</span>
+            <textarea name="message" rows="4" placeholder="Describe the engagement, target scope, or just say hi..." required></textarea>
+          </label>
+          <input type="text" name="_gotcha" class="field-honeypot" tabindex="-1" autocomplete="off">
+          <button type="submit" class="btn btn-primary btn-block">send_payload()</button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+      <div class="contact-side">
+        <div class="contact-line"><span class="label">GITHUB</span><span class="value">github.com/HexFud</span></div>
+        <div class="contact-line"><span class="label">HACK THE BOX</span><span class="value">hackthebox.com/HexFud</span></div>
+        <div class="contact-line"><span class="label">PROGRAMS</span><span class="value">Olicyber // CyberChallenge.IT</span></div>
+        <div class="contact-line"><span class="label">STATUS</span><span class="value value-live">TRAINING FOR TEAMITALY 2027</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>hexfud@sec-portfolio:~$ <span class="footer-blink">_</span></span>
+  <span class="footer-right">© 2026 — LOGGED FROM COMPETITION, NOT PRODUCTION</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
