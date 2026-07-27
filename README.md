@@ -105,12 +105,3 @@ The competition table lives in `index.html` under `<section id="ctf">`. Each row
 
 Pull your numbers from [CTFtime](https://ctftime.org) and swap them in.
 
-## Roadmap
-
-- [ ] Replace placeholder challenge notes with real writeups
-- [ ] Add a dark/darker mode toggle
-- [ ] More CTFs, hopefully a TeamItaly qualifier
-
-## License
-
-MIT — do whatever you want with it, credit is appreciated but not required.
