@@ -1,0 +1,44 @@
+@media (max-width: 900px) {
+  .hero-grid,
+  .about-grid,
+  .skills-grid,
+  .writeups-grid,
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .log-row {
+    grid-template-columns: 1.6fr 1fr 1fr;
+    font-size: 12px;
+  }
+
+  .compliance-row {
+    grid-template-columns: 32px 1fr;
+    row-gap: 8px;
+  }
+
+  .compliance-status {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .topbar-right {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
