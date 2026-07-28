@@ -105,3 +105,7 @@ The competition table lives in `index.html` under `<section id="ctf">`. Each row
 
 Pull your numbers from [CTFtime](https://ctftime.org) and swap them in.
 
+## AI Declaration
+
+AI helped me to build the initial structure of the site 
+
